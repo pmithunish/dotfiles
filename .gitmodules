@@ -4,3 +4,6 @@
 [submodule "bundle/lightline"]
 	path = bundle/lightline
 	url = https://github.com/itchyny/lightline.vim.git
+[submodule "bundle/devicons"]
+	path = bundle/devicons
+	url = https://github.com/ryanoasis/vim-devicons.git
