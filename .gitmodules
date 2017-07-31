@@ -1,5 +1,5 @@
 [submodule "bunndle/lightline"]
-	path = bunndle/lightline
+	path = bundle/lightline
 	url = https://github.com/itchyny/lightline.vim.git
 [submodule "bundle/nerdtree"]
 	path = bundle/nerdtree

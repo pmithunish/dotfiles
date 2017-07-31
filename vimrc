@@ -1,3 +1,6 @@
+" vim-pathogen specific command to install plugins
+execute pathogen#infect()
+
 " setting nocompatibility to vi and enable advance features of vim
 set nocompatible
 " setting syntax highlighting
@@ -44,3 +47,9 @@ for prefix in ['i', 'n', 'v']
     exe prefix . "noremap " . key . " <Nop>"
   endfor
 endfor
+
+" settings for the lightline plugin
+" displays the lighline without window splits
+set laststatus=2
+set noshowmode
+set ttimeoutlen=50
