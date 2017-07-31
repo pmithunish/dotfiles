@@ -1,0 +1,9 @@
+Installation
+
+    git clone https://github.com/pmithunish/dotfiles.git ~/.vim
+
+Create Symbolic Link
+
+    ln -s ~/.vim/vimrc ~/.vimrc
+
+
