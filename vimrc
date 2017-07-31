@@ -72,3 +72,9 @@ call NERDTreeHighlightFile('json', 'Red', 'none', 'red', '#151515')
 call NERDTreeHighlightFile('scss', 'Magenta', 'none', '#ff00ff', '#151515')
 call NERDTreeHighlightFile('css', 'Magenta', 'none', '#ff00ff', '#151515')
 call NERDTreeHighlightFile('ico', 'Red', 'none', '#ffa500', '#151515')
+
+set encoding=utf8
+let g:airline_powerline_fonts = 1
+let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
+let g:DevIconsEnableFoldersOpenClose = 1
