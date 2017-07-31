@@ -1,0 +1,3 @@
+[submodule "bunndle/lightline"]
+	path = bunndle/lightline
+	url = https://github.com/itchyny/lightline.vim.git
