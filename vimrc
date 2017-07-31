@@ -51,5 +51,7 @@ endfor
 " settings for the lightline plugin
 " displays the lighline without window splits
 set laststatus=2
+" removes the default mode status line
 set noshowmode
+" removes the lag when switching from insert to normal mode
 set ttimeoutlen=50
