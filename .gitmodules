@@ -10,3 +10,6 @@
 [submodule "bundle/nerdtree-syntax-highlight"]
 	path = bundle/nerdtree-syntax-highlight
 	url = https://github.com/tiagofumo/vim-nerdtree-syntax-highlight.git
+[submodule "bundle/syntastic"]
+	path = bundle/syntastic
+	url = https://github.com/vim-syntastic/syntastic.git

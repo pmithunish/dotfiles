@@ -3,6 +3,8 @@ execute pathogen#infect()
 
 " setting nocompatibility to vi and enable advance features of vim
 set nocompatible
+set autoread
+set history=1000
 " setting syntax highlighting
 syntax on
 
@@ -11,14 +13,15 @@ colorscheme cobalt2
 
 " setting to display line numbers
 set number
-set relativenumber
+set norelativenumber
 
 " setting the leader key to <space>
 let mapleader=" "
 
 " setting the source command to ' s'
-map <leader>s :source ~/.vimrc<cr>
+nmap <leader>s :source ~/.vimrc<cr>
 
+set hidden
 " allow specific filetype indent rules if available
 filetype plugin indent on
 
@@ -26,26 +29,44 @@ filetype plugin indent on
 set nowrap
 
 " setting tab styles
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-set expandtab
+set smarttab
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set noexpandtab
+set shiftround
 
 "setting smart and auto indent
 set smartindent
 set autoindent
 
+" toggle invisible characters
+set list
+set listchars=tab:→\ ,eol:¬,trail:⋅,extends:❯,precedes:❮
+set showbreak=↪
+
+" make backspace behave in a sane manner
+set backspace=indent,eol,start
+
+" search settings
+set ignorecase
+set smartcase
+set incsearch
+set nolazyredraw
+
+set magic
+
 " setting the highlight search text toggler to ' h'
-map <leader>h :set hlsearch!<cr>
+nmap <leader>h :set hlsearch!<cr>
 
 " shows the matching paranthesis when the cursor is next to a openning or closing paranthesis
 set showmatch
 
 " Unbind the cursor keys in insert, normal and visual modes.
 for prefix in ['i', 'n', 'v']
-  for key in ['<Up>', '<Down>', '<Left>', '<Right>']
-    exe prefix . "noremap " . key . " <Nop>"
-  endfor
+	for key in ['<Up>', '<Down>', '<Left>', '<Right>']
+		exe prefix . "noremap " . key . " <Nop>"
+	endfor
 endfor
 
 " settings for the lightline plugin
@@ -57,8 +78,8 @@ set noshowmode
 set ttimeoutlen=50
 
 function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
-    exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
-    exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
+	exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
+	exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
 endfunction
 
 call NERDTreeHighlightFile('js', 'green', 'none', 'green', '#151515')
@@ -78,3 +99,31 @@ let g:airline_powerline_fonts = 1
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
 let g:DevIconsEnableFoldersOpenClose = 1
+
+" mapping shortcut to save
+nmap <leader>w :w<cr>
+
+vmap <leader>[ <gv
+vmap <leader>] >gv
+nmap <leader>[ <<
+nmap <leader>] >>
+
+nmap <leader>l :set list!<cr>
+
+nmap <C-h> <C-W>h
+nmap <C-l> <C-W>l
+nmap <C-j> <C-W>j
+nmap <C-k> <C-W>k
+
+nmap <C-n> gt
+nmap <C-p> gT
+nmap <leader>1 1gt
+nmap <leader>2 2gt
+nmap <leader>3 3gt
+nmap <leader>4 4gt
+nmap <leader>5 5gt
+nmap <leader>6 6gt
+nmap <leader>7 7gt
+nmap <leader>8 8gt
+
+nmap <leader>q :q<cr>
