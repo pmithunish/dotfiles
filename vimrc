@@ -6,7 +6,7 @@ set nocompatible
 set autoread
 set history=1000
 " setting syntax highlighting
-syntax on
+syntax enable
 
 " setting theme to cobalt 2
 colorscheme cobalt2
@@ -33,7 +33,7 @@ set smarttab
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
-set noexpandtab
+set expandtab
 set shiftround
 
 "setting smart and auto indent
@@ -64,9 +64,9 @@ set showmatch
 
 " Unbind the cursor keys in insert, normal and visual modes.
 for prefix in ['i', 'n', 'v']
-	for key in ['<Up>', '<Down>', '<Left>', '<Right>']
-		exe prefix . "noremap " . key . " <Nop>"
-	endfor
+  for key in ['<Up>', '<Down>', '<Left>', '<Right>']
+    exe prefix . "noremap " . key . " <Nop>"
+  endfor
 endfor
 
 " settings for the lightline plugin
@@ -78,8 +78,8 @@ set noshowmode
 set ttimeoutlen=50
 
 function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
-	exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
-	exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
+  exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
+  exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
 endfunction
 
 call NERDTreeHighlightFile('js', 'green', 'none', 'green', '#151515')
@@ -128,10 +128,11 @@ nmap <leader>8 8gt
 
 nmap <leader>q :q<cr>
 
-let g:typescript_compiler_binary = '/usr/local/bin/tsc'
-let g:typescript_compiler_options = ''
-
-autocmd FileType typescript :set makeprg=/usr/local/bin/tsc
-
-autocmd QuickFixCmdPost [^l]* nested cwindow
-autocmd QuickFixCmdPost    l* nested lwindow
+let g:ale_change_sign_column_color = 1
+let g:ale_sign_column_always = 1
+let g:ale_sign_error = '✖'
+let g:ale_sign_warning = '⚠'
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\   'typescript': ['tslint', 'tsserver', 'eslint', 'typecheck']
+\}
