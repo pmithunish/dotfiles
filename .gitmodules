@@ -19,3 +19,6 @@
 [submodule "bundle/yats"]
 	path = bundle/yats
 	url = https://github.com/HerringtonDarkholme/yats.vim.git
+[submodule "bundle/ale"]
+	path = bundle/ale
+	url = https://github.com/w0rp/ale.git
